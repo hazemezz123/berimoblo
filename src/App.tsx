@@ -389,88 +389,130 @@ const HomePage = () => {
 const LogoWrapper = styled.a`
   display: flex;
   align-items: center;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
-  color: #000;
+  color: #1a1a1a;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const LogoIcon = styled.span`
-  font-size: 24px;
-  margin-right: 8px;
+  font-size: 28px;
+  margin-right: 10px;
+  color: #2563eb;
 `;
 
 const LogoText = styled.span`
-  font-size: 20px;
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const AuthContainer = styled.div`
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 30px;
+  gap: 40px;
+  padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
 `;
 
 const LoginCard = styled.div`
-  background-color: #000;
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
   color: white;
-  padding: 30px;
-  border-radius: 8px;
+  padding: 40px;
+  border-radius: 16px;
   width: 100%;
   max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
-const SignupCard = styled.div`
-  background-color: #000;
-  color: white;
-  padding: 30px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
-`;
+const SignupCard = styled(LoginCard)``;
 
 const CardTitle = styled.h2`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(45deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 `;
 
 const FormLabel = styled.label`
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #e5e7eb;
 `;
 
 const FormInput = styled.input`
   width: 100%;
-  padding: 12px 15px;
-  border: none;
-  background-color: #eee;
-  border-radius: 4px;
+  padding: 14px 16px;
+  border: 2px solid #374151;
+  background-color: #1f2937;
+  border-radius: 8px;
+  color: #f3f4f6;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+
+  &::placeholder {
+    color: #9ca3af;
+  }
 `;
 
 const SubmitButton = styled.button`
   width: 100%;
-  padding: 12px;
-  background-color: #ccc;
-  color: #000;
+  padding: 14px;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
-  font-weight: bold;
-  text-transform: capitalize;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 `;
 
 const ForgotPassword = styled.div`
   text-align: right;
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 14px;
+  color: #60a5fa;
   cursor: pointer;
+  transition: color 0.3s ease;
 
   &:hover {
+    color: #3b82f6;
     text-decoration: underline;
   }
 `;
@@ -478,47 +520,65 @@ const ForgotPassword = styled.div`
 const Divider = styled.hr`
   border: none;
   height: 1px;
-  background-color: #ccc;
-  margin: 40px 0;
+  background: linear-gradient(to right, transparent, #374151, transparent);
+  margin: 50px 0;
 `;
 
 const ContactContainer = styled.div`
   max-width: 800px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #ccc;
-  border-radius: 8px;
+  margin: 20px auto;
+  padding: 40px;
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 `;
 
 const ContactHeader = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 const ContactIcon = styled.span`
-  font-size: 30px;
-  margin-right: 15px;
+  font-size: 36px;
+  margin-right: 20px;
+  color: #3b82f6;
 `;
 
 const ContactTitle = styled.h2`
   margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  font-family: "Inter", sans-serif;
 `;
 
 const ContactForm = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 `;
 
 const ContactTextArea = styled.textarea`
   width: 100%;
-  padding: 12px 15px;
-  border: none;
-  background-color: #eee;
-  border-radius: 4px;
-  min-height: 120px;
+  padding: 14px 16px;
+  border: 2px solid #374151;
+  background-color: #1f2937;
+  border-radius: 8px;
+  min-height: 150px;
   resize: vertical;
+  color: #f3f4f6;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+
+  &::placeholder {
+    color: #9ca3af;
+  }
 `;
 
 // Existing styled components
@@ -526,73 +586,124 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-`;
-
-const Logo = styled.a`
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
+  padding: 20px 40px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 `;
 
 const AuthButtons = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 15px;
 `;
 
 const SignUpButtonLink = styled(Link)`
-  background-color: #000;
-  color: #fff;
-  padding: 8px 15px;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+  }
 `;
 
-const LogInButtonLink = styled(Link)`
-  background-color: #000;
-  color: #fff;
-  padding: 8px 15px;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-`;
+const LogInButtonLink = styled(SignUpButtonLink)``;
 
 const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 `;
 
 const NavItems = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 30px;
 `;
 
 const NavItemLink = styled(Link)`
   cursor: pointer;
-  padding: 5px 0;
+  padding: 8px 0;
   text-decoration: none;
-  color: inherit;
+  color: #1f2937;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #2563eb;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 const NavItem = styled.div`
   cursor: pointer;
-  padding: 5px 0;
+  padding: 8px 0;
+  color: #1f2937;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #2563eb;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 const RequestQuoteButton = styled.button`
-  background-color: #000;
-  color: #fff;
-  padding: 8px 15px;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 12px 24px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+  }
 `;
 
 const RequestQuoteText = styled.span``;
@@ -603,12 +714,12 @@ const HeroSection = styled.section`
   background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 40px;
   position: relative;
 
   &::before {
@@ -618,37 +729,59 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.3)
+    );
   }
 `;
 
 const HeroTitle = styled.h1`
-  color: #fff;
-  font-size: 32px;
+  color: white;
+  font-size: 48px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   z-index: 1;
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 `;
 
 const SearchBar = styled.div`
   display: flex;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   z-index: 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
 `;
 
 const SearchInput = styled.input`
   flex: 1;
-  padding: 10px 15px;
+  padding: 16px 20px;
   border: none;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const SearchButton = styled.button`
-  background-color: #000;
-  color: #fff;
-  padding: 10px 15px;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 16px 24px;
   border: none;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+  }
 `;
 
 const ProductsSection = styled.section`
@@ -681,33 +814,46 @@ const ProductGrid = styled.div`
 `;
 
 const ProductCard = styled.div`
-  border: 1px solid #eee;
-  padding: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const ProductImage = styled.img`
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
 `;
 
 const ProductName = styled.h3`
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1f2937;
 `;
 
 const ProductPrice = styled.div`
-  color: green;
-  font-weight: bold;
-  margin-bottom: 5px;
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
 `;
 
 const ProductReviews = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #666;
+  color: #6b7280;
 `;
 
 const ReviewIcon = styled.span``;
@@ -745,68 +891,104 @@ const OldPrice = styled.div`
 `;
 
 const Footer = styled.footer`
-  background-color: #000;
-  color: #fff;
-  padding: 30px 20px;
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  color: white;
+  padding: 50px 40px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 40px;
 `;
 
 const FooterSection = styled.div``;
 
 const FooterTitle = styled.h3`
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #3b82f6;
 `;
 
 const FooterText = styled.p`
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #e5e7eb;
+  line-height: 1.6;
 `;
 
 const Newsletter = styled.div`
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 
 const NewsletterTitle = styled.h4`
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3b82f6;
 `;
 
 const NewsletterForm = styled.div`
   display: flex;
+  gap: 10px;
 `;
 
 const NewsletterInput = styled.input`
   flex: 1;
-  padding: 10px;
-  border: none;
+  padding: 12px 16px;
+  border: 2px solid #374151;
+  background-color: #1f2937;
+  border-radius: 8px;
+  color: #f3f4f6;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
 `;
 
 const NewsletterButton = styled.button`
-  background-color: #333;
-  color: #fff;
-  padding: 10px 15px;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 12px 20px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+  }
 `;
 
 const FooterLink = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   cursor: pointer;
+  color: #e5e7eb;
+  transition: all 0.3s ease;
 
   &:hover {
-    text-decoration: underline;
+    color: #3b82f6;
+    transform: translateX(5px);
   }
 `;
 
 const SocialIcons = styled.div`
   display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 20px;
+  margin-bottom: 20px;
 `;
 
 const SocialIcon = styled.span`
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #3b82f6;
+    transform: scale(1.2);
+  }
 `;
 
 function App() {
